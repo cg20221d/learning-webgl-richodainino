@@ -1,3 +1,5 @@
 function main() {
-  alert("Hi there");
+	const kanvas = document.getElementById("kanvas");
+	
+	alert(kanvas);
 }
