@@ -4,10 +4,15 @@ function main() {
 	const gl = canvas.getContext("webgl")
 	
 	var vertices = [
-		1.0, 0.0,	// A: kanan
-		0.0, -1.0,	// B: bawah
-		-1.0, 0.0,	// C: kiri
-		0.0, 1.0	// D: atas
+		0.0, 0.0,		// tengah
+		-0.5, 0.5,	// kiri atas
+		0.0, 1.0,		// atas
+		0.5, 0.5,		// kanan atas
+		0.0, 0.0, 	// tengah
+		0.5, -0.5,	// kanan bawah
+		0.0, -1.0,	// bawah
+		-0.5, -0.5,	// kiri bawah
+		0.0, 0.0		// tengah
 	]
 
 	var buffer = gl.createBuffer()
@@ -57,5 +62,5 @@ function main() {
 
 	gl.clear(gl.COLOR_BUFFER_BIT)
 
-	gl.drawArrays(gl.TRIANGLE_FAN, 0, 4)
+	gl.drawArrays(gl.TRIANGLE_FAN, 0, 8)
 }
