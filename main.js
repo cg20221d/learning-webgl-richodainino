@@ -70,11 +70,21 @@ function main() {
 	gl.enableVertexAttribArray(aColor)
 
 	// Grafika interaktif
-	function onMouseClick(event) {
+	// Mouse
+	function onMouseClick(e) {
 		freeze = !freeze
 	}
-
 	document.addEventListener("click", onMouseClick)
+
+	function onKeyDown(e) {
+		if (e.keyCode === 32) freeze = !freeze
+	}
+	function onKeyUp(e) {
+		if (e.keyCode === 32) freeze = !freeze
+	}
+	document.addEventListener("keydown", onKeyDown)
+	document.addEventListener("keyup", onKeyUp)
+
 
 	function render() {
 		gl.clearColor(0.0, 0.0, 0.0, 0.03)
